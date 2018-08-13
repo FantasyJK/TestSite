@@ -1,9 +1,9 @@
 var timePeriod;
 var weather;  //  sunny? cloudy? rainny? fair? snowy?
 var mood;  // happy? excited? calm? sad? angry?
-var rank = 0; // 0 - 12
+var rank = 0; // 0 - 11
 
-function getTime() {  // 0 - 3
+function getTime() {  // 0 - 2
 	var hour = new Date().getHours();
 	if (hour > 6 and hour < 13) {
 		timePeriod = "morning";	
@@ -11,7 +11,7 @@ function getTime() {  // 0 - 3
 	}
 	else if (hour >= 13 and hour < 19) {
 		timePeriod = "afternoon";
-		rank += 3;
+		rank += 2;
 	}
 	else if (hour >= 19 and hour < 22) {
 		timePeriod = "evening";
@@ -23,9 +23,13 @@ function getTime() {  // 0 - 3
 	}
 }
 
-function getWeather() { // 0 - 2
+function getWeather() { // 0 - 3
  // https://openweathermap.org/appid
+ 
 	if (weather == "sunny"){
+		rank += 3;
+	}
+	else if (weather == "cloudy") {	
 		rank += 2;
 	}
 	else if (weather == "fair") {	
@@ -38,10 +42,10 @@ function getWeather() { // 0 - 2
 
 funcion getMood() { // 0 - 6
 	if (mood == "excited"){
-		rank += 7;
+		rank += 6;
 	}
 	else if (mood == "happy") {	
-		rank += 6;
+		rank += 5;
 	}
 	else if (mood == "calm") {	
 		rank += 4;
@@ -64,4 +68,7 @@ function triggerSpecialEffect() {
 	// birthday? memory day? angry?
 }
 
-
+// 怪蜀黍智能系统检测到 窗外阳光明媚，就像开心的笑笑 喵雨倾盆，呜呜呜 阴晴不定，喵喵在想什么呢。。 漫天飞雪，喵在家里烤暖气喵？
+// 早上好，早起的喵喵有鱼吃！ 早上好，今天有什么喵计划呢？ 下午好，休息一下喵？ 下午好，一会儿吃什么喵？ 晚上好， 我猜猜喵在做什么喵？ 晚上好， 喵喵想我了喵？ 很晚了，喵喵要早点睡呀。。。
+// 手机电脑设备检测？
+//
