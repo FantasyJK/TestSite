@@ -1,0 +1,67 @@
+var timePeriod;
+var weather;  //  sunny? cloudy? rainny? fair? snowy?
+var mood;  // happy? excited? calm? sad? angry?
+var rank = 0; // 0 - 12
+
+function getTime() {  // 0 - 3
+	var hour = new Date().getHours();
+	if (hour > 6 and hour < 13) {
+		timePeriod = "morning";	
+		rank += 2;
+	}
+	else if (hour >= 13 and hour < 19) {
+		timePeriod = "afternoon";
+		rank += 3;
+	}
+	else if (hour >= 19 and hour < 22) {
+		timePeriod = "evening";
+		rank += 1;
+	}
+	else {
+		timePeriod = "night";
+		rank += 0;
+	}
+}
+
+function getWeather() { // 0 - 2
+ // https://openweathermap.org/appid
+	if (weather == "sunny"){
+		rank += 2;
+	}
+	else if (weather == "fair") {	
+		rank += 1;
+	}
+	else {	
+		rank += 0;
+	}
+}
+
+funcion getMood() { // 0 - 6
+	if (mood == "excited"){
+		rank += 7;
+	}
+	else if (mood == "happy") {	
+		rank += 6;
+	}
+	else if (mood == "calm") {	
+		rank += 4;
+	}
+	else if (mood == "thinking") {	
+		rank += 2;
+	}
+	else if (mood = "Stressed") {
+		rank += 1;
+	}
+	else if (mood == "sad") {	
+		rank += 0;
+	}
+	else if (mood == "sad") {	
+		 // trigger special effect here!!!
+	}
+}
+
+function triggerSpecialEffect() {
+	// birthday? memory day? angry?
+}
+
+
